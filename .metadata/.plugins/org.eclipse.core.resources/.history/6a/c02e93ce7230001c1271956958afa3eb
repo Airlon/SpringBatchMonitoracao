@@ -1,0 +1,87 @@
+package com.boavista.jobbatch.dominio;
+
+public class Produto {
+	
+	private String codigoPrimario;
+	private String codigoSecundario;
+	private String nomeCliente;
+	private String sistema;
+	private String assunto;
+	private String quantidade;
+	private String faturamentoPrimario;
+	private String faturamentoSecundario;
+	private String data;
+	
+	public String getCodigoPrimario() {
+		return codigoPrimario;
+	}
+	public void setCodigoPrimario(String codigoPrimario) {
+		this.codigoPrimario = codigoPrimario;
+	}
+	public String getCodigoSecundario() {
+		return codigoSecundario;
+	}
+	public void setCodigoSecundario(String codigoSecundario) {
+		this.codigoSecundario = codigoSecundario;
+	}
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+	public String getSistema() {
+		return sistema;
+	}
+	public void setSistema(String sistema) {
+		this.sistema = sistema;
+	}
+	public String getAssunto() {
+		return assunto;
+	}
+	public void setAssunto(String assunto) {
+		this.assunto = assunto;
+	}
+	public String getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(String quantidade) {
+		this.quantidade = quantidade;
+	}
+	public String getFaturamentoPrimario() {
+		return faturamentoPrimario;
+	}
+	public void setFaturamentoPrimario(String faturamentoPrimario) {
+		this.faturamentoPrimario = faturamentoPrimario;
+	}
+	public String getFaturamentoSecundario() {
+		return faturamentoSecundario;
+	}
+	public void setFaturamentoSecundario(String faturamentoSecundario) {
+		this.faturamentoSecundario = faturamentoSecundario;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	@Override
+	public String toString() {
+		return "ArquivoCliente{" +
+	                " Codigo Primario='" + codigoPrimario + "'" +
+	                ", Codigo Secundario ='" + codigoSecundario + "'" +
+	                ", Nome Cliente ='" + nomeCliente + "'" +
+	                ", Sistema ='" + sistema + "'" +
+	                ", Assunto ='" + assunto + "'" +
+	                ", Quantidade ='" + quantidade + "'" +
+	                ", Faturamento Primario ='" + faturamentoPrimario + "'" +
+	                ", Faturamento Secundario='" + faturamentoSecundario + "'" +
+	                ", Data ='" + data + "'" +
+	                '}';
+	
+
+	}
+	
+}

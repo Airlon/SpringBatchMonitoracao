@@ -1,0 +1,13 @@
+package com.boavista.jobbatch.dominio;
+
+public class Produto {
+	
+	private String sistema;
+	private String assunto;
+	private String descricao;
+	private int quantidade;
+	private String data;
+	
+	
+}
+

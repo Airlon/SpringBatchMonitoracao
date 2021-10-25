@@ -1,0 +1,18 @@
+package com.boavista.jobbatch.job.reader;
+
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.context.annotation.Bean;
+
+import com.boavista.jobbatch.dominio.ArquivoCliente;
+
+public class leituraArquivoReaderConfig {
+	
+	@Bean
+	public FlatFileItemReader<ArquivoCliente> leituraArquivoReader() {
+		// TODO Implementar leitor de arquivo delimitado.
+		return null;
+
+}
+
+}
+

@@ -1,0 +1,33 @@
+package com.boavista.jobbatch.job.reader;
+
+import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+
+import com.boavista.jobbatch.dominio.ArquivoCliente;
+
+@Configuration
+public class leituraArquivoReaderConfig {
+	
+	@StepScope
+	@Bean
+	public FlatFileItemReader<ArquivoCliente> leituraArquivoReader(
+			@Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {	
+		return new FlatFileItemReaderBuilder<ArquivoCliente>()
+		.name("leituraArquivoReader")
+		.resource(arquivoClientes)
+		.delimited()
+		//.delimiter(";")
+		.names(new String [] {"codigoPrimario", "codigoSecundario", "nomeCliente", "sistema", "assunto", "quantidade", "faturamentoPrimario", "faturamentoSecundario", "data" })
+		.targetType(ArquivoCliente.class)
+		.build();
+		
+
+}
+
+}
+

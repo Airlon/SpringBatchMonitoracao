@@ -1,0 +1,22 @@
+package com.boavista.jobbatch.file;
+
+import java.io.File;
+
+public class MovendoProduto {
+
+
+	  public static void main(String[] args) {
+	    try {
+	      File arquivo = new File("C:/Projetos/File/FATLOG_PRODUTO.txt");
+	      
+	      if (arquivo.renameTo(new File("C:/Projetos/FileProcess/" + arquivo.getName()))) {
+	        System.out.println("Arquivo movido com sucesso!");
+	      } else {
+	        System.out.println("Falha ao mover arquivo!");
+	      }
+	    } catch (Exception e) {
+	      System.out.println("Falha ao mover arquivo!");
+	    }
+	  }
+	}
+

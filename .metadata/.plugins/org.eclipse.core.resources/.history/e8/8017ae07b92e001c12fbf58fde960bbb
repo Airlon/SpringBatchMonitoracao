@@ -1,0 +1,5 @@
+package com.boavista.jobbatch.config;
+
+public class DataSourceConfig {
+
+}

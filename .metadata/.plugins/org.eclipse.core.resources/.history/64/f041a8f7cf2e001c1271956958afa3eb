@@ -1,0 +1,10 @@
+package com.boavista.jobbatch.writer;
+
+@Configuration
+public class LeituraArquivoDelimitadoWriterConfig {
+	@Bean
+	public ItemWriter<Cliente> leituraArquivoWriter() {
+		return items -> items.forEach(System.out::println);
+	}
+}
+

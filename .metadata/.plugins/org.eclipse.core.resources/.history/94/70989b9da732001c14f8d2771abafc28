@@ -1,0 +1,22 @@
+package com.boavista.jobbatch.config;
+
+import javax.sql.DataSource;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+
+
+@Configuration
+public class DataSourceConfig {
+	@Primary
+    @Bean(name = "postgresDb")
+	@ConfigurationProperties(prefix = "spring.ds-postgresql")
+	public DataSource postgresDataSource() {
+	return  DataSourceBuilder.create().build();
+
+}
+
+}

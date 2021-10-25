@@ -1,0 +1,42 @@
+<configuration debug="true">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+        <smtpHost>smtp.mailgun.org</smtpHost>
+        <smtpPort>25</smtpPort>
+        <username>123</username>
+        <password>123</password>
+        <to>TO_EMAIL</to>
+        <to>RO_ANOTHER_EMAIL</to>
+        <from>FROM_EMAIL</from>
+        <subject>TESTING: %logger{20} - %m</subject>
+
+        <layout class="ch.qos.logback.classic.html.HTMLLayout"/>
+
+		<!-- for testing , comment in production, default 256 -->
+        <cyclicBufferTracker class="ch.qos.logback.core.spi.CyclicBufferTracker">
+			<!-- Send just one log entry per email, ready for a lot of emails if you put one. -->
+            <bufferSize>1</bufferSize>
+        </cyclicBufferTracker>
+
+		<!-- for testing , comment in production, default asynchronousSending = true -->
+        <asynchronousSending>false</asynchronousSending>
+
+    </appender>
+
+    <logger name="com.mkyong" level="error" additivity="false">
+        <appender-ref ref="EMAIL"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>

@@ -1,0 +1,31 @@
+package com.boavista.jobbatch.step;
+
+
+
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.item.ItemReader;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.boavista.jobbatch.dominio.ArquivoCliente;
+
+
+	@Configuration
+	public class LeituraArquivoStepConfig {
+		@Autowired
+		public StepBuilderFactory stepBuilderFactory;
+
+		@Bean
+		public Step leituraArquivoStep(ItemReader<ArquivoCliente> leituraArquivoReader,
+				ItemWriter<ArquivoCliente> leituraArquivoWriter) {
+			return stepBuilderFactory
+					.get("leituraArquivoStep")
+					.<ArquivoCliente, ArquivoCliente>chunk(1)
+					.reader(leituraArquivoReader)
+					.writer(leituraArquivoWriter)
+					.build();
+		}
+	}

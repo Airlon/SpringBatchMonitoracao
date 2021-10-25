@@ -1,0 +1,5 @@
+package com.boavista.jobbatch.job.reader;
+
+public class leituraArquivoReaderConfig {
+
+}

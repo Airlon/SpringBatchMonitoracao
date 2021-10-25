@@ -1,0 +1,5 @@
+package com.boavista.jobbatch.tasklet;
+
+public class ImprimeOlaTasklet {
+
+}

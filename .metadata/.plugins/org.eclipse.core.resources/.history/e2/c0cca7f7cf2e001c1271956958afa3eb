@@ -1,0 +1,5 @@
+package com.boavista.jobbatch.writer;
+
+public class LeituraArquivoWriter {
+
+}

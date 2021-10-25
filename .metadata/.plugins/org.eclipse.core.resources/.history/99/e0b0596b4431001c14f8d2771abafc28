@@ -1,0 +1,32 @@
+package com.boavista.jobbatch.job.reader;
+
+import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.FileSystemResource;
+
+import com.boavista.jobbatch.dominio.ProdutoCliente;
+
+@Configuration
+public class ProdutoClienteReaderConfig {
+	
+	@StepScope
+	@Bean
+	public FlatFileItemReader<ProdutoCliente> produtoClienteReader() {
+		return new FlatFileItemReaderBuilder<ProdutoCliente>()	
+				.name("produtoClienteReader")
+				.resource(new FileSystemResource("files/FATLOG_PRODUTO_CLIENTE.txt"))
+				.delimited()
+				.delimiter(";")
+				.names(new String [] {"codigoPrimario", "codigoSecundario", "nomeCliente", "sistema", "assunto", "quantidade", "faturamentoPrimario", "faturamentoSecundario", "data" })
+				.addComment("")
+				.targetType(ProdutoCliente.class)
+				.build();
+		
+
+	}
+
+}
+

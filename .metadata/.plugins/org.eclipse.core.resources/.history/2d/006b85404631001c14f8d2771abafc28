@@ -1,0 +1,15 @@
+package com.boavista.jobbatch.writer;
+
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.boavista.jobbatch.dominio.ProdutoCliente;
+
+@Configuration
+public class LeituraArquivoWriterConfig {
+	@Bean
+	public ItemWriter<ProdutoCliente> leituraArquivoWriter() {
+		return items -> items.forEach(System.out::println);
+	}
+}

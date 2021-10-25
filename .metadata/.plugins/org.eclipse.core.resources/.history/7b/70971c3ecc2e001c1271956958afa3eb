@@ -1,0 +1,5 @@
+package com.boavista.jobbatch.dominio;
+
+public class ArquivoCliente {
+
+}
