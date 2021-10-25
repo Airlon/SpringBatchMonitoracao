@@ -1,0 +1,22 @@
+
+
+CREATE DATABASE DADOS_MONITORACAO;
+
+
+DROP TABLE IF EXISTS FATLOG_PRODUTO_CLIENTE;
+CREATE TABLE FATLOG_PRODUTO_CLIENTE (codigoPrimario VARCHAR(30),codigoSecundario VARCHAR(30), 
+nomeCliente VARCHAR(200),
+sistema VARCHAR(30),
+assunto VARCHAR(30),
+quantidade INT,
+faturamentoPrimario VARCHAR(30),
+faturamentoSecundario VARCHAR(30),
+data_fat date);
+
+
+DROP TABLE IF EXISTS FATLOG_PRODUTO;
+CREATE TABLE FATLOG_PRODUTO (sistema VARCHAR(30), assunto VARCHAR(30), 
+descricao VARCHAR(200),
+quantidade INT,
+data_prodt date);
+
